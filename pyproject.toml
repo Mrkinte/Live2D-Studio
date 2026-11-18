@@ -1,0 +1,32 @@
+[project]
+name = "live2d-studio"
+version = "1.0.0"
+description = "Live2D MOC3 editor with a Fluent studio UI"
+readme = "README.md"
+authors = [
+    { name = "Mrkinte", email = "31399509+Mrkinte@users.noreply.github.com" }
+]
+requires-python = ">=3.12,<3.13"
+dependencies = [
+    "live2d-py==1.0.0",
+    "py-moc3==0.1.0",
+    "pyinstaller>=6.22.3",
+    "pyside6>=6.8,<7",
+    "pyside6-fluent-widgets>=1.7",
+]
+
+[project.scripts]
+live2d-studio = "live2d_studio.app:main"
+
+[build-system]
+requires = ["uv_build>=0.11.15,<0.12.0"]
+build-backend = "uv_build"
+
+[dependency-groups]
+dev = [
+    "pytest>=9.2.0",
+]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-q"
